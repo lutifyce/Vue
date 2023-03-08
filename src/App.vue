@@ -6,16 +6,19 @@ export default {
     }
   },
   methods: {
-    changeVisibility: function() {
-      this.visibility = !this.visibility
+     changeVisibilityToTrue: function() {
+      this.visibility = true;
+    },
+    changeVisibilityToFalse: function() {
+      this.visibility = false;
     }
   }
-}
+} 
 </script>
 <template>
   <p v-if="!hidden">P1</p>
-  <p v-else>P2</p>
-  <button class = "button" @click="changeVisibility">visibility = {{ visibility }}</button>
+  <button class="button" v-if="!visibility" @click="changeVisibilityToTrue">Show text</button>
+  <button class="button" v-else @click="changeVisibilityToFalse">Hide text</button><br>
 </template>
 
 <style scoped>
