@@ -2,7 +2,7 @@
 export default {
   data() {
     return {
-      
+      cssClasses: "flex: 1 30px;",
     }
   },
   methods: {
@@ -11,18 +11,9 @@ export default {
 } 
 </script>
 <template>
-  <p>
-		1
-	</p>
-	<p>
-		2
-	</p>
+   <p :style="cssClasses">asda123</p>
 </template>
-<style>
-	p {
-		color: red;
-	}
-</style>
+
 <style scoped>
 header {
   line-height: 1.5;
