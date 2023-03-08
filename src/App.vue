@@ -14,9 +14,16 @@
     arr1: [1, 2, 3],
     obj: {x: 1, y: 2, z: 3},
 	}
+},
+methods: { 
+ show: function() { 
+  alert(today); 
+ }
 }
-  }
+}
+  let today = new Date(); 
 </script>
+
 
 <template>
   <div>
@@ -28,6 +35,7 @@
   <p class="sc">num^2 = {{num*num}}, num1+num2+num3 = {{num1+num2+num3}}.</p>
   <p class="sc"> 1) <br> {{arr[0]}} <br> {{arr[1]}} <br> {{arr[2]}} <br> 2): {{arr1[0] + arr1[1] + arr1[2]}}</p><br>
   <p class="sc"> суммf элементов obj : {{obj.x + obj.y + obj.z}} </p>
+  <button class="button button1" @click="show">Дата</button> <br> 
   </div>
 </template>
 
