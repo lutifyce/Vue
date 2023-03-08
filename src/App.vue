@@ -34,7 +34,13 @@ return days[date-1];
 double: function(str){
 alert(str*str);
 },
-}
+changeToType: function() {
+      this.text = 'type';
+    },
+changeToWrite: function() {
+      this.text = 'write';
+    }
+},
 }
   let today = new Date(); 
 </script>
@@ -54,8 +60,10 @@ alert(str*str);
   <button class="button button1" @click="show">Дата</button> <br> 
   <button class="button button2" @mouseenter="show"> Дата наводка</button> 
    <button class="button button1" @click="date">день недели({{ date }})</button>
-   <button class="button" @click="double(2)">квадрат  2</button>
-    <button class="button" @click="double(3)">Выведет 3</button>
+   <button class="button" @click="double(2)">квадрат  2</button><br>
+    <button class="button" @click="double(3)">Выведет 3</button><br>
+    <button class="button" @click="changeToWrite">изменить на "write"</button><br>
+    <button class="button" @click="changeToType">изменить на "type"</button> <br>
   </div>
 </template>
 
