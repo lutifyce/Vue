@@ -2,7 +2,8 @@
 export default {
   data() {
     return {
-       den:'ee'
+       den:'ee',
+       age:25,
     }
   },
   methods: {
@@ -28,6 +29,10 @@ export default {
   <p v-if="this.den === 5">Пятница</p>
   <p v-if="this.den === 6">Суббота</p>
   <p v-if="this.den === 0">Воскресенье</p>
+  <br> <p class="button" v-if="age < 14">Вы ребенок</p>
+  <p class="button"  v-else-if="age < 18">подросток</p>
+  <p class="button"  v-else-if="age < 25">молодой человек</p>
+  <p class="button"  v-else-if="age >= 26">мужчина</p>
 </template>
 
 <style scoped>
