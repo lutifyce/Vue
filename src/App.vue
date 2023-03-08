@@ -13,7 +13,7 @@ export default {
 }
 </script>
 <template>
-  <p v-if="visibility">P1</p>
+  <p v-if="!hidden">P1</p>
   <p v-else>P2</p>
   <button class = "button" @click="changeVisibility">visibility = {{ visibility }}</button>
 </template>
