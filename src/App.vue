@@ -36,6 +36,7 @@ methods: {
   <p class="sc"> 1) <br> {{arr[0]}} <br> {{arr[1]}} <br> {{arr[2]}} <br> 2): {{arr1[0] + arr1[1] + arr1[2]}}</p><br>
   <p class="sc"> суммf элементов obj : {{obj.x + obj.y + obj.z}} </p>
   <button class="button button1" @click="show">Дата</button> <br> 
+  <button class="button button2" @mouseenter="show"> Дата наводка</button> 
   </div>
 </template>
 
