@@ -2,20 +2,17 @@
 export default {
   data() {
     return {
-      items: [1, 2, 3, 4, 5],
+      arr: ['x', 'y', 'z'],
     }
   },
   methods: {
-      toggle: function() {
-      this.visibility = !this.visibility;
+
     }
   }
 } 
 </script>
 <template>
-  <div class="red-box"><div v-for="elem in items">{{ elem }} &nbsp;</div></div> <br>
-  <div class="red-box"><br><div v-for="elem in items">{{ elem ** 2 }} &nbsp;</div></div> <br> <br>
-  <div class="red-box right"><div v-for="elem in items"><ul><li>{{ elem }}</li></ul>&nbsp;</div></div>
+   <p class ="button" v-for="(elem, klych) in arr">{{ klych }}:&nbsp {{ elem }}</p>
 </template>
 
 <style scoped>
