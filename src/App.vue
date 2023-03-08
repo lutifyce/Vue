@@ -1,85 +1,21 @@
 <script>
-  export default {
-    data() {
-	return {
-    cost: '150',
-    amount: '9',
-		name: 'luti',
-		surn: 'fyce',
-    text: 'page',
-		href: 'page.html',
-    num: 5,
-    num1: 1,
-		num2: 2,
-		num3: 3,
-    arr: ['x', 'y', 'z'],
-    arr1: [1, 2, 3],
-    obj: {x: 1, y: 2, z: 3},
-    date : '4',
-	}
-},
-methods: { 
- show: function() { 
-  alert(today); 
- },
- summ: function() {
-  alert(this.num1 + this.num2)
- },
- data: function(){
-let date = this.dayOfWeek(this.date);
-alert(date);
-},
-dayOfWeek: function(date){
-let days = ['Monday', 'Tuesday', 'Wednesday', 'Thursday', 'Friday', 'Saturday', 'Sunday']
-return days[date-1];
-},
-double: function(str){
-alert(str*str);
-},
-changeToType: function() {
-      this.text = 'type';
-    },
-changeToWrite: function() {
-      this.text = 'write';
-    },
-computePrice: function() {
-      this.price = (this.cost * this.amount);
-    },
-alyarm: function() {
-      alert(`This will only be shown once`);
-    }    
+export default {
+  data() {
+    return {
+      visibility: false,
+    }
+  },
+  methods: {
+    changeVisibility: function() {
+      this.visibility = !this.visibility
+    }
+  }
 }
-}
-  let today = new Date(); 
 </script>
-
-
 <template>
-{{ summ() }}
-  <div>
-		<h1> App </h1>
-	</div>
-  <br>
-  <div> <p> {{ name }} {{ surn }}</p>
-  <p> paparam <a href="page.html">text</a></p>
-  <p class="sc">num^2 = {{num*num}}, num1+num2+num3 = {{num1+num2+num3}}.</p>
-  <p class="sc"> 1) <br> {{arr[0]}} <br> {{arr[1]}} <br> {{arr[2]}} <br> 2): {{arr1[0] + arr1[1] + arr1[2]}}</p><br>
-  <p class="sc"> суммf элементов obj : {{obj.x + obj.y + obj.z}} </p>
-  <button class="button button1" @click="show">Дата</button> <br> 
-  <button class="button button2" @mouseenter="show"> Дата наводка</button> 
-   <button class="button button1" @click="date">день недели({{ date }})</button>
-   <button class="button" @click="double(2)">квадрат  2</button><br>
-  <button class="button" @click="double(3)">Выведет 3</button><br>
-  <button class="button" @click="changeToWrite">изменить на "write"</button><br>
-  <button class="button" @click="changeToType">изменить на "type"</button> <br>
-  <p>num for cost:</p>
-  <input type="number" v-model.number="cost" ref="costField">
-  <p>num for amount:</p>
-  <input type="number" v-model.number="amount" ref="amountField">
-  <button class="button" k="computePrice">{{ price }}</button><br>
-  <a href.prevent="https://kipu-rc.ru" target="_blank">Link</a><br>
-  <button class="button" e="alyarm">Button</button>
-  </div>
+  <p v-if="visibility">P1</p>
+  <p v-else>P2</p>
+  <button class = "button" @click="changeVisibility">visibility = {{ visibility }}</button>
 </template>
 
 <style scoped>
