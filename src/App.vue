@@ -1,17 +1,20 @@
 <script>
 export default {
   data() {
-    return {
-      cssClasses: "flex: 1 30px;",
-    }
-  },
+	return {
+		obj: {
+			done: true,
+			selected:  false,
+		},
+	}
+}
   methods: {
   
     }
 } 
 </script>
 <template>
-   <p :style="cssClasses">asda123</p>
+    <p :class="obj">asd1a1123</p>
 </template>
 
 <style scoped>
