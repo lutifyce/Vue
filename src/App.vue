@@ -10,6 +10,8 @@
     num1: 4,
 		num2: 3,
 		num3: 2,
+    arr: ['x', 'y', 'z'],
+    arr1: [1, 2, 3],
 	}
 }
   }
@@ -23,6 +25,7 @@
   <div> <p> {{ name }} {{ surn }}</p>
   <p> paparam <a href="page.html">text</a></p>
   <p class="sc">num^2 = {{num*num}}, num1+num2+num3 = {{num1+num2+num3}}.</p>
+  <p class="sc"> 1) <br> {{arr[0]}} <br> {{arr[1]}} <br> {{arr[2]}} <br> 2): {{arr1[0] + arr1[1] + arr1[2]}}</p>
   </div>
 </template>
 
