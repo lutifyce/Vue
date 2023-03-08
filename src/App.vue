@@ -2,33 +2,27 @@
 export default {
   data() {
     return {
-      products: [
-			{
-				id: 1,
-				name: 'product1',
-			},
-			{
-				id: 2,
-				name: 'product2',
-			},
-			{
-				id: 3,
-				name: 'product3',
-			},
-		]
+      
     }
   },
   methods: {
-
+  
     }
 } 
 </script>
 <template>
-   <ul v-for="smh in names" :key="smh.id">
-    <li>{{ smh.name }}</li>
-  </ul>
+  <p>
+		1
+	</p>
+	<p>
+		2
+	</p>
 </template>
-
+<style>
+	p {
+		color: red;
+	}
+</style>
 <style scoped>
 header {
   line-height: 1.5;
