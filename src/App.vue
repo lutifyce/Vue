@@ -2,23 +2,19 @@
 export default {
   data() {
     return {
-      visibility: true,
+      visibility: false,
     }
   },
   methods: {
-   toggle: function() {
+      toggle: function() {
       this.visibility = !this.visibility;
     }
   }
 } 
 </script>
 <template>
-   <div v-if="visibility">
-  <p>+++</p>
-  <p>+++</p>
-  <p>+++</p>
-  </div>
-  <button class="button" @click="toggle">кнопкая</button>
+  <p v-show="visibility">+++</p><br>
+  <button class="button" @click="toggle">тык </button>
 </template>
 
 <style scoped>
