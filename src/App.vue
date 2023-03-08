@@ -7,9 +7,9 @@
     text: 'page',
 		href: 'page.html',
     num: 5,
-    num1: 4,
-		num2: 3,
-		num3: 2,
+    num1: 1,
+		num2: 2,
+		num3: 3,
     arr: ['x', 'y', 'z'],
     arr1: [1, 2, 3],
     obj: {x: 1, y: 2, z: 3},
@@ -18,6 +18,9 @@
 methods: { 
  show: function() { 
   alert(today); 
+ },
+ summ: function() {
+  alert(this.num1 + this.num2)
  }
 }
 }
@@ -26,6 +29,7 @@ methods: {
 
 
 <template>
+{{ summ() }}
   <div>
 		<h1> App </h1>
 	</div>
