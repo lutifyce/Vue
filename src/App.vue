@@ -3,7 +3,7 @@
     data() {
 	return {
 		name: 'luti',
-		surn: 'fice',
+		surn: 'fyce',
     text: 'page',
 		href: 'page.html',
 	}
@@ -16,25 +16,14 @@
 		<h1> App </h1>
 	</div>
   <br>
-  <br>
-  <br>
-  <br>
-  <img :src="attr">
-  <div> <p> Hello, i'm {{ name }} {{ surn }}</p>
-    <p>Check out my skills <a href="page.html">here</a></p>
+  <div> <p> {{ name }} {{ surn }}</p>
+  <p> paparam <a href="page.html">text</a></p>
   </div>
 </template>
 
-<style >
+<style scoped>
 header {
   line-height: 1.5;
-}
-p {
-  line-height: 2.5;
-  font-size: large;
-  letter-spacing: 2px;
-  font-family: Impact, Haettenschweiler, 'Arial Narrow Bold', sans-serif;
-  color: rgb(255, 0, 0);
 }
 .logo {
   display: block;
