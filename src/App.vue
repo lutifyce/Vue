@@ -1,13 +1,21 @@
 <script>
   export default {
-	  name: 'App',
+    data() {
+	return {
+		name: 'luti',
+		surn: 'fyce',
+	}
+}
   }
 </script>
 
 <template>
-  <header>
-    papipupitatutu
-  </header>
+  <div>
+		<h1> App </h1>
+	</div>
+  <br>
+  <div> <p> {{ name }} {{ surn }}</p>
+  </div>
 </template>
 
 <style scoped>
