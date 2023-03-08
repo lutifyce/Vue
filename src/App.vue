@@ -44,6 +44,9 @@ changeToWrite: function() {
     },
 computePrice: function() {
       this.price = (this.cost * this.amount);
+    },
+alyarm: function() {
+      alert(`This will only be shown once`);
     }    
 }
 }
@@ -73,7 +76,9 @@ computePrice: function() {
   <input type="number" v-model.number="cost" ref="costField">
   <p>num for amount:</p>
   <input type="number" v-model.number="amount" ref="amountField">
-  <button class="button" k="computePrice">{{ price }}</button>
+  <button class="button" k="computePrice">{{ price }}</button><br>
+  <a href.prevent="https://kipu-rc.ru" target="_blank">Link</a><br>
+  <button class="button" e="alyarm">Button</button>
   </div>
 </template>
 
