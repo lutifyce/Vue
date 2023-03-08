@@ -6,6 +6,10 @@
 		surn: 'fyce',
     text: 'page',
 		href: 'page.html',
+    num: 5,
+    num1: 4,
+		num2: 3,
+		num3: 2,
 	}
 }
   }
@@ -18,6 +22,7 @@
   <br>
   <div> <p> {{ name }} {{ surn }}</p>
   <p> paparam <a href="page.html">text</a></p>
+  <p class="sc">num^2 = {{num*num}}, num1+num2+num3 = {{num1+num2+num3}}.</p>
   </div>
 </template>
 
