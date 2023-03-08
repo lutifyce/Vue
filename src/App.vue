@@ -31,6 +31,9 @@ dayOfWeek: function(date){
 let days = ['Monday', 'Tuesday', 'Wednesday', 'Thursday', 'Friday', 'Saturday', 'Sunday']
 return days[date-1];
 },
+double: function(str){
+alert(str*str);
+},
 }
 }
   let today = new Date(); 
@@ -51,6 +54,8 @@ return days[date-1];
   <button class="button button1" @click="show">Дата</button> <br> 
   <button class="button button2" @mouseenter="show"> Дата наводка</button> 
    <button class="button button1" @click="date">день недели({{ date }})</button>
+   <button class="button" @click="double(2)">квадрат  2</button>
+    <button class="button" @click="double(3)">Выведет 3</button>
   </div>
 </template>
 
