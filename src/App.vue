@@ -2,6 +2,8 @@
   export default {
     data() {
 	return {
+    cost: '150',
+    amount: '9',
 		name: 'luti',
 		surn: 'fyce',
     text: 'page',
@@ -39,8 +41,11 @@ changeToType: function() {
     },
 changeToWrite: function() {
       this.text = 'write';
-    }
-},
+    },
+computePrice: function() {
+      this.price = (this.cost * this.amount);
+    }    
+}
 }
   let today = new Date(); 
 </script>
@@ -61,9 +66,14 @@ changeToWrite: function() {
   <button class="button button2" @mouseenter="show"> Дата наводка</button> 
    <button class="button button1" @click="date">день недели({{ date }})</button>
    <button class="button" @click="double(2)">квадрат  2</button><br>
-    <button class="button" @click="double(3)">Выведет 3</button><br>
-    <button class="button" @click="changeToWrite">изменить на "write"</button><br>
-    <button class="button" @click="changeToType">изменить на "type"</button> <br>
+  <button class="button" @click="double(3)">Выведет 3</button><br>
+  <button class="button" @click="changeToWrite">изменить на "write"</button><br>
+  <button class="button" @click="changeToType">изменить на "type"</button> <br>
+  <p>num for cost:</p>
+  <input type="number" v-model.number="cost" ref="costField">
+  <p>num for amount:</p>
+  <input type="number" v-model.number="amount" ref="amountField">
+  <button class="button" k="computePrice">{{ price }}</button>
   </div>
 </template>
 
