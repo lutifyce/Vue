@@ -2,16 +2,18 @@
 export default {
   data() {
     return {
+      items: [1, -2, 3, -4, 5],
     }
   },
   methods: {
 
     }
-  }
 } 
 </script>
 <template>
-  <p v-for="num in 30">{{ num }}&nbsp;</p>
+   <div v-for="num in items">
+    <p v-if="num >= 0">{{ num }}&nbsp;</p>
+  </div>
 </template>
 
 <style scoped>
