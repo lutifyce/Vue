@@ -2,7 +2,7 @@
 export default {
   data() {
     return {
-      visibility: false,
+      items: [1, 2, 3, 4, 5],
     }
   },
   methods: {
@@ -13,8 +13,9 @@ export default {
 } 
 </script>
 <template>
-  <p v-show="visibility">+++</p><br>
-  <button class="button" @click="toggle">тык </button>
+  <div class="red-box"><div v-for="elem in items">{{ elem }} &nbsp;</div></div> <br>
+  <div class="red-box"><br><div v-for="elem in items">{{ elem ** 2 }} &nbsp;</div></div> <br> <br>
+  <div class="red-box right"><div v-for="elem in items"><ul><li>{{ elem }}</li></ul>&nbsp;</div></div>
 </template>
 
 <style scoped>
