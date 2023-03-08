@@ -2,41 +2,20 @@
 export default {
   data() {
     return {
-      visibility: false,
-      visibility_p1: false,
-      visibility_p2: false,
-      visibility_p3: false,
+      isAdmin: true,
     }
   },
   methods: {
-     changeVisibilityToTrue: function() {
-      this.visibility = true;
-    },
-    changeVisibilityToFalse: function() {
-      this.visibility = false;
-    },
-     toggle_p1: function() {
-        this.visibility_p1 = !this.visibility_p1;
-      },
-      toggle_p2: function() {
-        this.visibility_p2 = !this.visibility_p2;
-      },
-      toggle_p3: function() {
-        this.visibility_p3 = !this.visibility_p3;
-      },
+     toggle: function() {
+      this.isAdmin = !this.isAdmin;
+    }
   }
 } 
 </script>
 <template>
-  <p v-if="!hidden">P1</p>
-  <button class="button" v-if="!visibility" @click="changeVisibilityToTrue">Show text</button>
-  <button class="button" v-else @click="changeVisibilityToFalse">Hide text</button><br>
-   <button class="button" @click="toggle_p1">toggle</button><br>
-  <p v-if="visibility_p1">text p1</p>
-  <button class="button" @click="toggle_p2">toggle</button><br>
-  <p v-if="visibility_p2">text p2</p>
-  <button class="button" @click="toggle_p3">toggle</button><br>
-  <p v-if="visibility_p3">text p3</p>
+  <button class="button" @click="toggle">{{ isAdmin ? "админ" : "не админ" }}</button><br>
+  <p v-if="isAdmin">вы не админ</p>
+  <p v-else>ладно вы админ..</p>
 </template>
 
 <style scoped>
