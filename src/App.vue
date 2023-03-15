@@ -2,31 +2,63 @@
 export default {
   data() {
      return {
-      lang: [],
+      choice: "",
+      english: true,
+      russian: false,
+      python: false,
 	}
   },
   methods: {
-   split_value: function () {
-      this.value_array = this.value_button.split(" ");
+    eng: function () {
+      this.english = true;
+      this.russian = false;
+      this.python = false;
+    },
+    rus: function () {
+      this.english = false;
+      this.russian = true;
+      this.python = false;
+    },
+    py: function () {
+      this.english = false;
+      this.russian = false;
+      this.python = true;
     },
   },
 };
 </script>
 <template>
-<input type="checkbox" v-model="lang" value="c" />
+<p v-if="english">What is your mother tongue?</p>
+  <p v-if="russian">Какой ваш родной язык?</p>
+  <p v-if="python">
+    print('hello world!') :)
+  </p>
   &nbsp;
-  <p>C</p>
+  <input
+    name="radio"
+    type="radio"
+    v-model="choice"
+    value="English"
+    @click="eng"
+  />
   &nbsp;
-  <input type="checkbox" v-model="lang" value="python" />
+  <input
+    name="radio"
+    type="radio"
+    v-model="choice"
+    value="Русский"
+    @click="rus"
+  />
   &nbsp;
-  <p>Python</p>
-  <input type="checkbox" v-model="lang" value="javascript" />
+  <input
+    name="radio"
+    type="radio"
+    v-model="choice"
+    value="def def def"
+    @click="py"
+  />
   &nbsp;
-  <p>JavaScript</p>
-  &nbsp;
-  <ul v-for="elem in lang">
-    <li>{{ elem }}</li>
-  </ul>
+  <p>{{ choice }}</p>
 </template>
 
 <style scoped>
