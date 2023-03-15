@@ -3,7 +3,6 @@ export default {
   data() {
     return {
       obj: {
-        hidden: true,
       },
     };
   },
@@ -15,10 +14,7 @@ export default {
 };
 </script>
 <template>
-  <button class="button" @click="this.obj.hidden = false">2</button>
-  <button class="button" @click="this.obj.hidden = true">3</button>
-  <button class="button" @click="setDone">{{ obj.hidden ? "show" : "hide" }} 4</button><br />
-  <p :class="obj">asdasd</p>
+  <p :class="{active: true, valid: false,}">111111111</p>
 </template>
 
 <style scoped>
