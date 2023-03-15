@@ -2,9 +2,8 @@
 export default {
   data() {
      return {
-      value: "",
-      value_button: "",
-      value_array: "",
+      checked:true,
+      
 	}
   },
   methods: {
@@ -15,20 +14,9 @@ export default {
 };
 </script>
 <template>
-<input type="num" v-model="num" />
-   <valuearea v-model="value"></valuearea>
+<input type="checkbox" v-model="checked" />
   &nbsp;
-  <p>{{ value }}</p>
-  &nbsp;
-  <valuearea v-model="value_button"></valuearea>
-  &nbsp;
-  <button class="button" @click="split_value">Массив</button>
-  &nbsp;
-  <ul v-for="elem in value_array">
-    <li :key="key">
-      {{ elem }}
-    </li>
-  </ul>
+  <p v-if="checked">{{ checked }}</p>
 </template>
 
 <style scoped>
