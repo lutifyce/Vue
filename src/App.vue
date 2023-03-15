@@ -2,60 +2,33 @@
 export default {
   data() {
      return {
-       num: 1,
-      num_abz: "111",
-      num_1: 0,
-      num_2: 0,
-      sum_num: "0",
-      text_1: "gfg",
-      text_2: "fgf",
-      fullName: "",
-      Name: "",
-      Surname: "",
-      Patronymic: "",
+      value: "",
+      value_button: "",
+      value_array: "",
 	}
   },
   methods: {
-   square: function () {
-      this.num_abz = this.num ** 2;
-    },
-    sum: function () {
-      this.sum_num = this.num_1 + this.num_2;
-    },
-    swap: function () {
-      const temp = this.text_1;
-      this.text_1 = this.text_2;
-      this.text_2 = temp;
-    },
-    split: function () {
-      this.Surname = this.fullName.split(" ")[0];
-      this.Name = this.fullName.split(" ")[1];
-      this.Patronymic = this.fullName.split(" ")[2];
+   split_value: function () {
+      this.value_array = this.value_button.split(" ");
     },
   },
 };
 </script>
 <template>
 <input type="num" v-model="num" />
-  <button @click="square">Квадрат num</button>
+   <valuearea v-model="value"></valuearea>
   &nbsp;
-  <p>{{ num_square }}</p>
+  <p>{{ value }}</p>
   &nbsp;
-  <input type="num" v-model="numero_uno" />
-  <input type="num" v-model="numero_dos" />
-  <button @click="sum">Сумма</button>
+  <valuearea v-model="value_button"></valuearea>
   &nbsp;
-  <p>{{ sum_num }}</p>
+  <button class="button" @click="split_value">Массив</button>
   &nbsp;
-  <input type="text" v-model="text_uno" />
-  <input type="text" v-model="text_dos" />
-  <button @click="swap">Замена</button>
-  &nbsp;
-  <input type="text" v-model="fullName" />
-  <button @click="split">Поделить ФИО</button>
-  <p>Фамилия = {{ userSurname }}</p>
-  <p>Имя = {{ userName }}</p>
-  <p>Отчество = {{ userPatronymic }}</p>
+  <ul v-for="elem in value_array">
+    <li :key="key">
+      {{ elem }}
+    </li>
+  </ul>
 </template>
 
 <style scoped>
