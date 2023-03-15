@@ -1,10 +1,10 @@
 <script>
 export default {
   data() {
-    return {
-      obj: {
-      },
-    };
+    return return {
+		isValid: true,
+		isDisabled: true,
+	}
   },
   methods: {
     setDone: function () {
@@ -14,7 +14,7 @@ export default {
 };
 </script>
 <template>
-  <p :class="{active: true, valid: false,}">111111111</p>
+  <p :class="{ active: isValid, valid: isDisabled }">1111111</p>
 </template>
 
 <style scoped>
@@ -39,8 +39,5 @@ header {
     place-items: flex-start;
     flex-wrap: wrap;
   }
-}
-p.hidden {
-	display: none;
 }
 </style>
