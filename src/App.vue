@@ -2,63 +2,24 @@
 export default {
   data() {
      return {
-      choice: "",
-      english: true,
-      russian: false,
-      python: false,
+     selected: "Выберите город",
 	}
   },
   methods: {
-    eng: function () {
-      this.english = true;
-      this.russian = false;
-      this.python = false;
-    },
-    rus: function () {
-      this.english = false;
-      this.russian = true;
-      this.python = false;
-    },
-    py: function () {
-      this.english = false;
-      this.russian = false;
-      this.python = true;
+    
     },
   },
 };
 </script>
 <template>
-<p v-if="english">What is your mother tongue?</p>
-  <p v-if="russian">Какой ваш родной язык?</p>
-  <p v-if="python">
-    print('hello world!') :)
-  </p>
+<select v-model="selected">
+    <option>симферополь</option>
+    <option>евпатория</option>
+    <option>ялта</option>
+    <option>симферополь</option>
+  </select>
   &nbsp;
-  <input
-    name="radio"
-    type="radio"
-    v-model="choice"
-    value="English"
-    @click="eng"
-  />
-  &nbsp;
-  <input
-    name="radio"
-    type="radio"
-    v-model="choice"
-    value="Русский"
-    @click="rus"
-  />
-  &nbsp;
-  <input
-    name="radio"
-    type="radio"
-    v-model="choice"
-    value="def def def"
-    @click="py"
-  />
-  &nbsp;
-  <p>{{ choice }}</p>
+  <p>{{ selected }}</p>
 </template>
 
 <style scoped>
