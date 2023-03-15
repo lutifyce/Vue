@@ -1,20 +1,24 @@
 <script>
 export default {
   data() {
-	return {
-		obj: {
-			done: true,
-			selected:  false,
-		},
-	}
-}
+    return {
+      obj: {
+        hidden: true,
+      },
+    };
+  },
   methods: {
-  
-    }
-} 
+    setDone: function () {
+      this.obj.hidden = !this.obj.hidden;
+    },
+  },
+};
 </script>
 <template>
-    <p :class="obj">asd1a1123</p>
+  <button class="button" @click="this.obj.hidden = false">2</button>
+  <button class="button" @click="this.obj.hidden = true">3</button>
+  <button class="button" @click="setDone">{{ obj.hidden ? "show" : "hide" }} 4</button><br />
+  <p :class="obj">asdasd</p>
 </template>
 
 <style scoped>
@@ -39,5 +43,8 @@ header {
     place-items: flex-start;
     flex-wrap: wrap;
   }
+}
+p.hidden {
+	display: none;
 }
 </style>
