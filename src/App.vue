@@ -2,18 +2,22 @@
 export default {
   data() {
      return {
+      message: "Задание",
+      message1: 1,
 	}
   },
   methods: {
-    setDone: function () {
-      this.obj.hidden = !this.obj.hidden;
+   
     },
   },
 };
 </script>
 <template>
-  <p :style="{ color: 'green', background: 'yellow', fontSize: '30px' }">111111</p>
-  <p :style="{ fontWeight: 'bold', fontStyle: 'italic', fontSize: '30px' }">22222</p>
+  <input type="text" v-model="message" />
+<p>{{ message }}</p>
+<p>{{ message.toUpperCase() }}</p>
+<input type="number" v-model="message1" />
+<p>{{ message1 ** 2 }}</p>
 </template>
 
 <style scoped>
