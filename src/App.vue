@@ -1,9 +1,7 @@
 <script>
 export default {
   data() {
-    return return {
-		isValid: true,
-		isDisabled: true,
+     return {
 	}
   },
   methods: {
@@ -14,7 +12,8 @@ export default {
 };
 </script>
 <template>
-  <p :class="{ active: isValid, valid: isDisabled }">1111111</p>
+  <p :style="{ color: 'green', background: 'yellow', fontSize: '30px' }">111111</p>
+  <p :style="{ fontWeight: 'bold', fontStyle: 'italic', fontSize: '30px' }">22222</p>
 </template>
 
 <style scoped>
