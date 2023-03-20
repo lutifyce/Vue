@@ -2,22 +2,54 @@
 export default {
   data() {
     return {
-      arr: ["1", "2", "3", "4", "5"],
+      users: [
+			{
+				id: 1,
+				name: 'name1',
+				salary: 100,
+				age: 30,
+			},
+			{
+				id: 2,
+				name: 'name2',
+				salary: 200,
+				age: 40,
+			},
+			{
+				id: 3,
+				name: 'name3',
+				salary: 300,
+				age: 50,
+			},
+		],
     };
   },
   methods: {
-    removeValue: function (index) {
-      this.arr.splice(index, 1);
+    removeValue: function (id) {
+      this.customers = this.customers.filter((customer) => {
+        return customer.id !== id;
+      });
     },
   },
 };
 </script>
 <template>
-  <ul>
-    <li v-for="(item, index) in arr" :key="index">
-      <button class="button" @click="removeValue(index)">{{ item }}</button>
-    </li>
-  </ul>
+  <table>
+    <tr>
+      <th>Id</th>
+      <th>Name</th>
+      <th>Salary</th>
+      <th>Age</th>
+      <th>Remove</th>
+    </tr>
+    <tr v-for="customer in customers">
+      <td>{{ customer.id }}</td>
+      <td>{{ customer.name }}</td>
+      <td>{{ customer.value }}</td>
+      <td>{{ customer.age }}</td>
+      <td><button class="button" @click="removeValue(customer.id)">remove</button></td>
+    </tr>
+  </table>
 </template>
 
 <style scoped>
