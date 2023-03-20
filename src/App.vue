@@ -2,54 +2,29 @@
 export default {
   data() {
     return {
-      var_1: "Task 1",
-      ctrlcheck: false,
-      var_2: "ctrl+link pressed",
+      value: "",
+      items: ["a", "b", "c", "d", "e"],
     };
   },
   methods: {
-    lag: function () {
-      this.var_1 = this.$refs.textField.value;
+    ValueEnd: function () {
+      this.items.push(this.value);
     },
-    leg: function (event) {
-      if (event.ctrlKey) {
-        this.ctrlcheck = true;
-      }
-    },
-    LKM: function (event) {
-      if (!event.ctrlKey) {
-        this.var_2 = "left";
-      }
-    },
-    PKM: function (event) {
-      if (!event.ctrlKey) {
-        this.var_2 = "right";
-      }
-    },
-    CKM: function (event) {
-      if (!event.ctrlKey) {
-        this.var_2 = "middle";
-      }
+    ValueBegin: function () {
+      this.items.unshift(this.value);
     },
   },
 };
 </script>
 <template>
- <input type="text" @keyup.enter="lag" ref="textField" />
-  <br>
-  <p>{{ var_1 }}</p>
-  <br>
-  <a
-    href=""
-    @click="leg"
-    @click.left="LKM"
-    @click.right="PKM"
-    @click.middle="CKM"
-    target="_blank"
-    >ссылка</a
-  >
-  <br>
-  <p v-if="ctrlcheck">{{ var_2 }}</p>
+  <input v-model="value" />
+  <button @click="ValueEnd">Добавить в конец</button>
+  <button @click="ValueBegin">Добавить в начало</button>
+  <ul v-for="(item, index) in items" :key="index">
+    <li>
+      {{ item }}
+    </li>
+  </ul>
 </template>
 
 <style scoped>
