@@ -1,26 +1,55 @@
 <script>
 export default {
   data() {
-     return {
-     isDisabled: true,
-	}
+    return {
+      var_1: "Task 1",
+      ctrlcheck: false,
+      var_2: "ctrl+link pressed",
+    };
   },
   methods: {
-    todayDate: function () {
-      var today = new Date();
-      this.dayYear = String(today.getDate());
-      this.monthYear = String(today.getMonth() + 1);
-      this.yearYear = today.getFullYear();
+    lag: function () {
+      this.var_1 = this.$refs.textField.value;
+    },
+    leg: function (event) {
+      if (event.ctrlKey) {
+        this.ctrlcheck = true;
+      }
+    },
+    LKM: function (event) {
+      if (!event.ctrlKey) {
+        this.var_2 = "left";
+      }
+    },
+    PKM: function (event) {
+      if (!event.ctrlKey) {
+        this.var_2 = "right";
+      }
+    },
+    CKM: function (event) {
+      if (!event.ctrlKey) {
+        this.var_2 = "middle";
+      }
     },
   },
 };
 </script>
 <template>
-<input type="checkbox" :checked="isDisabled" @click="($event) => (this.isDisabled = !this.isDisabled)"/>
-  <button class="button" v-bind:disabled="!isDisabled"
-    @click="($event) => (this.isDisabled = !this.isDisabled)">
-    {{ isDisabled ? "input включен" : "input выключен" }}
-  </button>
+ <input type="text" @keyup.enter="lag" ref="textField" />
+  <br>
+  <p>{{ var_1 }}</p>
+  <br>
+  <a
+    href=""
+    @click="leg"
+    @click.left="LKM"
+    @click.right="PKM"
+    @click.middle="CKM"
+    target="_blank"
+    >ссылка</a
+  >
+  <br>
+  <p v-if="ctrlcheck">{{ var_2 }}</p>
 </template>
 
 <style scoped>
