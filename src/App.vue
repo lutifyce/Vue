@@ -10,18 +10,18 @@ export default {
     User
   },
   methods: {
-    asd() {
-      alert('111');
+    userName(name) {
+      console.log(name);
     },
-    aret(){
-      alert('2222')
+    userSalary(name, salary){
+console.log(name, salary);
     }
   }
 }
 </script>
 
 <template>
-<User @show="asd" @show1="aret" />
+<User @show="userName" @show1="userSalary"/>
 </template>
 
 
