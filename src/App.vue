@@ -1,6 +1,13 @@
 <script>
 import User from './components/User.vue'
 export default {
+  data() {
+    return {
+      name: 'asdd',
+      salary: '54444',
+      age: '35',
+    }
+  },
   components: {
     User
   }
@@ -8,7 +15,7 @@ export default {
 </script>
 
 <template>
-<User :name="['aaas', '123123']"/>
+<User :name="name" :salary="salary" :age="age"/>
 </template>
 
 
