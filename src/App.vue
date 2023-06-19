@@ -1,11 +1,11 @@
 <script>
-import User from './components/User.vue'
+import User from './components/Employee.vue'
 export default {
   data() {
     return {
-      name: 'asdd',
-      salary: '54444',
-      age: '35',
+      name: 'aaaa',
+      salary: '33333',
+      age: '12',
     }
   },
   components: {
