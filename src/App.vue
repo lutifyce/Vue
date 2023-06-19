@@ -1,43 +1,15 @@
 <script>
 import User from './components/User.vue'
-	export default {
-		components: {
-			User
-		}
+export default {
+  components: {
+    User
+  }
 }
 </script>
-<template >
-	<User />
+
+<template>
+<User name="Jujuba" surn="Capybara" age="19"/>
 </template>
 
 <style scoped>
-header {
-  line-height: 1.5;
-  
-}
-.logo {
-  display: block;
-  margin: 0 auto 2rem;
-}
-@media (min-width: 1024px) {
-ul
-{
-  text-transform:uppercase;
-}
-  p {
-    color: red;
-    border: '1px solid green'
-    
-}
-  .logo {
-    margin: 0 2rem 0 0;
-    
-  }
-  header .wrapper {
-    
-    display: flex;
-    place-items: flex-start;
-    flex-wrap: wrap;
-  }
-}
 </style>
