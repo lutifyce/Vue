@@ -8,8 +8,9 @@ export default {
 </script>
 
 <template>
-<User name="Jujuba" surn="Capybara" age="19"/>
+<User :name="['aaas', '123123']"/>
 </template>
+
 
 <style scoped>
 </style>
